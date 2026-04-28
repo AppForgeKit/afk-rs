@@ -1,0 +1,24 @@
+[package]
+name = "app"
+version = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+anyhow = { version = "1.0.102" }
+serde = { workspace = true, features = ["derive"] }
+tokio = { workspace = true, features = ["macros", "sync"] }
+tonic = { workspace = true, features = ["codegen"] }
+prost = { workspace = true, features = ["derive"] }
+tonic-prost = { workspace = true }
+app-forge-kit-config = { workspace = true }
+app-forge-kit-service = { workspace = true }
+app-forge-kit-http-server = { workspace = true }
+app-forge-kit-http-client = { workspace = true }
+app-forge-kit-grpc-common = { workspace = true, features = ["macros"] }
+app-forge-kit-grpc-server = { workspace = true }
+app-forge-kit-grpc-client = { workspace = true }
+app-forge-kit-telemetry-tracing = { workspace = true }
+
+[build-dependencies.app-forge-kit-grpc-common]
+workspace = true
+features = ["builder"]

@@ -1,0 +1,77 @@
+[package]
+name = "app-forge-kit-http-server"
+version = { workspace = true }
+edition = { workspace = true }
+
+[features]
+default = [
+    "routing",
+    "dep:app-forge-kit-service",
+    "dep:app-forge-kit-telemetry-tracing",
+    "dep:serde",
+    "dep:async-trait",
+    "dep:tokio",
+    "dep:tower-http",
+    "dep:tower-service",
+]
+
+routing = [
+]
+
+[dependencies.async-trait]
+workspace = true
+optional = true
+
+[dependencies.axum]
+workspace = true
+features = [
+    "default",
+    "macros",
+    "multipart",
+    "ws",
+]
+
+[dependencies.http]
+workspace = true
+
+[dependencies.serde]
+workspace = true
+features = [
+    "derive",
+]
+optional = true
+
+[dependencies.thiserror]
+workspace = true
+
+[dependencies.tokio]
+workspace = true
+features = [
+    "macros",
+    "net",
+    "sync",
+    "time",
+]
+optional = true
+
+[dependencies.tower-http]
+workspace = true
+features = [
+    "full",
+]
+optional = true
+
+[dependencies.tower-service]
+workspace = true
+optional = true
+
+[dependencies.app-forge-kit-service]
+workspace = true
+optional = true
+
+[dependencies.app-forge-kit-telemetry-tracing]
+workspace = true
+features = [
+    "types",
+]
+optional = true

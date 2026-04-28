@@ -1,0 +1,59 @@
+[package]
+name = "app-forge-kit-grpc-client"
+version = { workspace = true }
+edition = { workspace = true }
+
+[features]
+default = [
+    "types",
+    "dep:serde",
+    "dep:url",
+]
+
+types = [
+    "dep:http",
+    "dep:thiserror",
+    "dep:tokio",
+    "dep:tonic",
+    "dep:tower",
+]
+
+[dependencies.http]
+workspace = true
+optional = true
+
+[dependencies.serde]
+workspace = true
+features = [
+    "derive",
+]
+optional = true
+
+[dependencies.thiserror]
+workspace = true
+optional = true
+
+[dependencies.tokio]
+workspace = true
+features = [
+    "sync",
+]
+optional = true
+
+[dependencies.tonic]
+workspace = true
+features = [
+    "channel",
+]
+optional = true
+
+[dependencies.tower]
+workspace = true
+optional = true
+
+[dependencies.url]
+workspace = true
+features = [
+    "serde",
+]
+optional = true

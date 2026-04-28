@@ -1,0 +1,19 @@
+[package]
+name = "app-forge-kit-config"
+version = { workspace = true }
+edition = { workspace = true }
+
+[dependencies.serde]
+workspace = true
+
+[dependencies.thiserror]
+workspace = true
+
+[dependencies.toml]
+workspace = true
+
+[dependencies.app-forge-kit-telemetry-tracing]
+workspace = true
+features = [
+    "types",
+]

@@ -1,0 +1,37 @@
+[package]
+name = "app-forge-kit-telemetry-tracing"
+version = { workspace = true }
+edition = { workspace = true }
+
+[features]
+default = [
+    "types",
+    "dep:tracing",
+    "dep:tracing-subscriber",
+    "dep:tracing-appender",
+]
+
+types = [
+    "tracing/log"
+]
+
+[dependencies.tracing]
+workspace = true
+features = [
+    "attributes",
+    "log",
+]
+optional = true
+
+[dependencies.tracing-subscriber]
+workspace = true
+features = [
+    "fmt",
+    "json",
+    "env-filter",
+]
+optional = true
+
+[dependencies.tracing-appender]
+workspace = true
+optional = true

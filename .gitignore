@@ -1,0 +1,5 @@
+# IDE & editors
+/.idea
+
+# Rust build
+/target

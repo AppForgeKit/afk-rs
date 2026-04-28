@@ -1,0 +1,24 @@
+[package]
+name = "app-forge-kit-grpc-common"
+version = { workspace = true }
+edition = { workspace = true }
+
+[features]
+builder = [
+    "dep:tonic-prost-build"
+]
+
+macros = [
+    "dep:tonic"
+]
+
+[dependencies.tonic]
+workspace = true
+features = [
+    "codegen"
+]
+optional = true
+
+[dependencies.tonic-prost-build]
+workspace = true
+optional = true

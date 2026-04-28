@@ -1,0 +1,118 @@
+[workspace]
+members = [
+    "config",
+    "examples/app",
+    "grpc/client",
+    "grpc/common",
+    "grpc/server",
+    "http/client",
+    "http/server",
+    "service",
+    "telemetry/tracing",
+]
+resolver = "3"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+authors = [
+    "Danil Syromolotov <pelmennoteam@gmail.com>"
+]
+license = "MIT"
+description = "Application forge kit (afk)"
+
+[workspace.dependencies.async-trait]
+version = "^0.1.89"
+
+[workspace.dependencies.axum]
+version = "^0.8.9"
+
+[workspace.dependencies.http]
+version = "^1.4.2"
+
+[workspace.dependencies.prost]
+version = "^0.14.4"
+
+[workspace.dependencies.reqwest]
+version = "^0.13.4"
+
+[workspace.dependencies.serde]
+version = "^1.0.228"
+
+[workspace.dependencies.signal-hook]
+version = "^0.4.4"
+
+[workspace.dependencies.thiserror]
+version = "^2.0.18"
+
+[workspace.dependencies.tokio]
+version = "^1.52.3"
+
+[workspace.dependencies.tonic]
+version = "^0.14.6"
+
+[workspace.dependencies.tonic-prost]
+version = "^0.14.6"
+
+[workspace.dependencies.tonic-prost-build]
+version = "^0.14.6"
+
+[workspace.dependencies.tonic-reflection]
+version = "^0.14.6"
+
+[workspace.dependencies.toml]
+version = "^1.1.2"
+
+[workspace.dependencies.tower]
+version = "^0.5.3"
+
+[workspace.dependencies.tower-http]
+version = "^0.6.11"
+
+[workspace.dependencies.tower-service]
+version = "^0.3.3"
+
+[workspace.dependencies.tracing]
+version = "^0.1.44"
+
+[workspace.dependencies.tracing-appender]
+version = "^0.2.5"
+
+[workspace.dependencies.tracing-subscriber]
+version = "^0.3.23"
+
+[workspace.dependencies.url]
+version = "^2.5.8"
+
+# Packages
+[workspace.dependencies.app-forge-kit-config]
+version = "0.1.0"
+path = "config"
+
+[workspace.dependencies.app-forge-kit-grpc-client]
+version = "0.1.0"
+path = "grpc/client"
+
+[workspace.dependencies.app-forge-kit-grpc-common]
+version = "0.1.0"
+path = "grpc/common"
+
+[workspace.dependencies.app-forge-kit-grpc-server]
+version = "0.1.0"
+path = "grpc/server"
+
+[workspace.dependencies.app-forge-kit-http-client]
+version = "0.1.0"
+path = "http/client"
+
+[workspace.dependencies.app-forge-kit-http-server]
+version = "0.1.0"
+path = "http/server"
+
+[workspace.dependencies.app-forge-kit-service]
+version = "0.1.0"
+path = "service"
+
+[workspace.dependencies.app-forge-kit-telemetry-tracing]
+version = "0.1.0"
+path = "telemetry/tracing"

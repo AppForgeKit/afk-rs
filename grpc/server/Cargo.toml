@@ -1,0 +1,40 @@
+[package]
+name = "app-forge-kit-grpc-server"
+version = { workspace = true }
+edition = { workspace = true }
+
+[dependencies.async-trait]
+workspace = true
+
+[dependencies.serde]
+workspace = true
+features = [
+    "derive",
+]
+
+[dependencies.thiserror]
+workspace = true
+
+[dependencies.tokio]
+workspace = true
+features = [
+    "macros",
+    "net",
+    "sync",
+    "time",
+]
+
+[dependencies.tonic]
+workspace = true
+features = [
+    "server",
+]
+
+[dependencies.tonic-reflection]
+workspace = true
+features = [
+    "server",
+]
+
+[dependencies.app-forge-kit-service]
+workspace = true

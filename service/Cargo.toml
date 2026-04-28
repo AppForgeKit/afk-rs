@@ -1,0 +1,31 @@
+[package]
+name = "app-forge-kit-service"
+version = { workspace = true }
+edition = { workspace = true }
+
+[dependencies.async-trait]
+workspace = true
+
+[dependencies.signal-hook]
+workspace = true
+
+[dependencies.thiserror]
+workspace = true
+
+[dependencies.tokio]
+workspace = true
+features = [
+    "io-std",
+    "net",
+    "process",
+    "rt",
+    "rt-multi-thread",
+    "sync",
+    "time",
+]
+
+[dependencies.app-forge-kit-telemetry-tracing]
+workspace = true
+features = [
+    "types",
+]

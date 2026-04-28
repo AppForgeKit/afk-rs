@@ -1,0 +1,48 @@
+[package]
+name = "app-forge-kit-http-client"
+version = { workspace = true }
+edition = { workspace = true }
+
+[features]
+default = [
+    "types",
+    "dep:serde",
+    "dep:http",
+    "dep:url",
+]
+
+types = [
+    "dep:reqwest"
+]
+
+[dependencies.http]
+workspace = true
+optional = true
+
+[dependencies.reqwest]
+workspace = true
+features = [
+    "default",
+    "form",
+    "json",
+    "multipart",
+    "query",
+]
+optional = true
+
+[dependencies.serde]
+workspace = true
+features = [
+    "derive",
+]
+optional = true
+
+[dependencies.thiserror]
+workspace = true
+
+[dependencies.url]
+workspace = true
+features = [
+    "serde",
+]
+optional = true

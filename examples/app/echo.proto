@@ -1,0 +1,15 @@
+syntax = 'proto3';
+
+package echo;
+
+service Echo {
+  rpc Do(DoRequest) returns(DoResponse);
+}
+
+message DoRequest {
+  string param = 1;
+}
+
+message DoResponse {
+  string param = 1;
+}
