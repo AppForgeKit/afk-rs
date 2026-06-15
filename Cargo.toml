@@ -20,6 +20,7 @@ authors = [
 ]
 license = "MIT"
 description = "Application forge kit (afk)"
+repository = "https://github.com/AppForgeKit/afk-rs"
 
 [workspace.dependencies.async-trait]
 version = "^0.1.89"

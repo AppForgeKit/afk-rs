@@ -2,6 +2,10 @@
 name = "app-forge-kit-config"
 version = { workspace = true }
 edition = { workspace = true }
+authors = { workspace = true }
+license = { workspace = true }
+description = "Application forge kit config"
+repository = { workspace = true }
 
 [dependencies.serde]
 workspace = true

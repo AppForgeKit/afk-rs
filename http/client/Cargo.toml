@@ -2,6 +2,10 @@
 name = "app-forge-kit-http-client"
 version = { workspace = true }
 edition = { workspace = true }
+authors = { workspace = true }
+license = { workspace = true }
+description = "Application forge kit HTTP client"
+repository = { workspace = true }
 
 [features]
 default = [
