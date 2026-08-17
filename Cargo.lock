@@ -40,7 +40,7 @@ checksum = "7f202df86484c868dbad7eaa557ef785d5c66295e41b460ef922eca0723b842c"
 
 [[package]]
 name = "app"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "anyhow",
  "app-forge-kit-config",
@@ -60,7 +60,7 @@ dependencies = [
 
 [[package]]
 name = "app-forge-kit-config"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "app-forge-kit-telemetry-tracing",
  "serde",
@@ -70,7 +70,7 @@ dependencies = [
 
 [[package]]
 name = "app-forge-kit-grpc-client"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "http",
  "serde",
@@ -83,7 +83,7 @@ dependencies = [
 
 [[package]]
 name = "app-forge-kit-grpc-common"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "tonic",
  "tonic-prost-build",
@@ -91,7 +91,7 @@ dependencies = [
 
 [[package]]
 name = "app-forge-kit-grpc-server"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "app-forge-kit-service",
  "async-trait",
@@ -104,7 +104,7 @@ dependencies = [
 
 [[package]]
 name = "app-forge-kit-http-client"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "http",
  "reqwest",
@@ -115,7 +115,7 @@ dependencies = [
 
 [[package]]
 name = "app-forge-kit-http-server"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "app-forge-kit-service",
  "app-forge-kit-telemetry-tracing",
@@ -131,7 +131,7 @@ dependencies = [
 
 [[package]]
 name = "app-forge-kit-service"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "app-forge-kit-telemetry-tracing",
  "async-trait",
@@ -142,7 +142,7 @@ dependencies = [
 
 [[package]]
 name = "app-forge-kit-telemetry-tracing"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "tracing",
  "tracing-appender",
