@@ -7,10 +7,6 @@ pub enum Signal {
     UNKNOWN,
     SIGINT,
     SIGTERM,
-    #[cfg(unix)]
-    SIGUSR_1,
-    #[cfg(unix)]
-    SIGUSR_2,
 }
 
 impl Signal {
@@ -35,10 +31,6 @@ impl From<&Signal> for c_int {
             Signal::UNKNOWN => 0 as c_int,
             Signal::SIGINT => consts::SIGINT,
             Signal::SIGTERM => consts::SIGTERM,
-            #[cfg(unix)]
-            Signal::SIGUSR_1 => consts::SIGUSR_1,
-            #[cfg(unix)]
-            Signal::SIGUSR_2 => consts::SIGUSR_2,
         }
     }
 }
@@ -48,10 +40,6 @@ impl From<&c_int> for Signal {
         match *signal {
             consts::SIGINT => Signal::SIGINT,
             consts::SIGTERM => Signal::SIGTERM,
-            #[cfg(unix)]
-            consts::SIGUSR_1 => Signal::SIGUSR_1,
-            #[cfg(unix)]
-            consts::SIGUSR_2 => Signal::SIGUSR_2,
             _ => Signal::UNKNOWN,
         }
     }
