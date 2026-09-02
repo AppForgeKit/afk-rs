@@ -87,6 +87,8 @@ version = "^2.5.8"
 
 [workspace.dependencies.config]
 version = "^0.15.25"
+default-features = false
+features = ["toml", "json", "yaml"]
 
 # Packages
 [workspace.dependencies.app-forge-kit-config]
