@@ -16,6 +16,9 @@ workspace = true
 [dependencies.toml]
 workspace = true
 
+[dependencies.config]
+workspace = true
+
 [dependencies.app-forge-kit-telemetry-tracing]
 workspace = true
 features = [
