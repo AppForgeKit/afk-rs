@@ -1,5 +1,6 @@
 mod service;
 
+use app_forge_kit_config::EnvConfig;
 use app_forge_kit_grpc_client::{ChannelProvider, ChannelProviderFromConfig};
 use app_forge_kit_grpc_server::Provider as GrpcServerProvider;
 use app_forge_kit_grpc_server::RoutesBuilder as GrpcServerRoutesBuilder;
@@ -55,8 +56,13 @@ impl FromRef<AppState> for service::Service {
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let _tracing_log_guard = app_forge_kit_telemetry_tracing::log::init();
 
+    unsafe {
+        std::env::set_var("APP|GRPC|CLIENTS|ECHO|METADATA|GRPC-SERVICE", "test-env");
+    }
+
     let config = app_forge_kit_config::Provider::new()
         .with_path("./config.toml")
+        .with_env_config(EnvConfig::new().prefix("APP").separator("|"))
         .read::<Config>()?;
 
     let http_clients = config.http.clients.request_builder_from_config()?;

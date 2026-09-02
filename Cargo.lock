@@ -40,7 +40,7 @@ checksum = "7f202df86484c868dbad7eaa557ef785d5c66295e41b460ef922eca0723b842c"
 
 [[package]]
 name = "app"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "anyhow",
  "app-forge-kit-config",
@@ -60,9 +60,10 @@ dependencies = [
 
 [[package]]
 name = "app-forge-kit-config"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "app-forge-kit-telemetry-tracing",
+ "config",
  "serde",
  "thiserror",
  "toml",
@@ -70,7 +71,7 @@ dependencies = [
 
 [[package]]
 name = "app-forge-kit-grpc-client"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "http",
  "serde",
@@ -83,7 +84,7 @@ dependencies = [
 
 [[package]]
 name = "app-forge-kit-grpc-common"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "tonic",
  "tonic-prost-build",
@@ -91,7 +92,7 @@ dependencies = [
 
 [[package]]
 name = "app-forge-kit-grpc-server"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "app-forge-kit-service",
  "async-trait",
@@ -104,7 +105,7 @@ dependencies = [
 
 [[package]]
 name = "app-forge-kit-http-client"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "http",
  "reqwest",
@@ -115,7 +116,7 @@ dependencies = [
 
 [[package]]
 name = "app-forge-kit-http-server"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "app-forge-kit-service",
  "app-forge-kit-telemetry-tracing",
@@ -131,7 +132,7 @@ dependencies = [
 
 [[package]]
 name = "app-forge-kit-service"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "app-forge-kit-telemetry-tracing",
  "async-trait",
@@ -142,12 +143,18 @@ dependencies = [
 
 [[package]]
 name = "app-forge-kit-telemetry-tracing"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "tracing",
  "tracing-appender",
  "tracing-subscriber",
 ]
+
+[[package]]
+name = "arraydeque"
+version = "0.5.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7d902e3d592a523def97af8f317b08ce16b7ab854c1985a0c671e6f15cebc236"
 
 [[package]]
 name = "async-compression"
@@ -386,6 +393,20 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cc14f565cf027a105f7a44ccf9e5b424348421a1d8952a8fc9d499d313107789"
 
 [[package]]
+name = "config"
+version = "0.15.25"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b85f248a4de22d204ceabc6299d89d2c70fbd7f09fea53c06c852369652d8139"
+dependencies = [
+ "pathdiff",
+ "serde_core",
+ "serde_json",
+ "toml",
+ "winnow",
+ "yaml-rust2",
+]
+
+[[package]]
 name = "core-foundation"
 version = "0.9.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -568,6 +589,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d9c4f5dac5e15c24eb999c26181a6ca40b39fe946cbe4c263c7209467bc83af2"
 
 [[package]]
+name = "foldhash"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "77ce24cb58228fbb8aa041425bb1050850ac19177686ea6e0f41a70416f56fdb"
+
+[[package]]
 name = "form_urlencoded"
 version = "1.2.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -697,7 +724,16 @@ version = "0.15.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9229cfe53dfd69f0609a49f65461bd93001ea1ef889cd5529dd176593f5338a1"
 dependencies = [
- "foldhash",
+ "foldhash 0.1.5",
+]
+
+[[package]]
+name = "hashbrown"
+version = "0.16.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "841d1cc9bed7f9236f321df977030373f4a4163ae1a7dbfe1a51a2c1a51d9100"
+dependencies = [
+ "foldhash 0.2.0",
 ]
 
 [[package]]
@@ -705,6 +741,15 @@ name = "hashbrown"
 version = "0.17.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4f467dd6dccf739c208452f8014c75c18bb8301b050ad1cfb27153803edb0f51"
+
+[[package]]
+name = "hashlink"
+version = "0.11.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "824e001ac4f3012dd16a264bec811403a67ca9deb6c102fc5049b32c4574b35f"
+dependencies = [
+ "hashbrown 0.16.1",
+]
 
 [[package]]
 name = "heck"
@@ -1200,6 +1245,12 @@ name = "openssl-probe"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7c87def4c32ab89d880effc9e097653c8da5d6ef28e6b539d313baaacfbafcbe"
+
+[[package]]
+name = "pathdiff"
+version = "0.2.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "df94ce210e5bc13cb6651479fa48d14f601d9858cfe0467f43ae157023b938d3"
 
 [[package]]
 name = "percent-encoding"
@@ -2863,6 +2914,9 @@ name = "winnow"
 version = "1.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2ee1708bef14716a11bae175f579062d4554d95be2c6829f518df847b7b3fdd0"
+dependencies = [
+ "memchr",
+]
 
 [[package]]
 name = "wit-bindgen"
@@ -2963,6 +3017,17 @@ name = "writeable"
 version = "0.6.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1ffae5123b2d3fc086436f8834ae3ab053a283cfac8fe0a0b8eaae044768a4c4"
+
+[[package]]
+name = "yaml-rust2"
+version = "0.11.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b36710ce3a279cfce8465dbab826f161675a262950b922cb2c3663852dfe9eb0"
+dependencies = [
+ "arraydeque",
+ "encoding_rs",
+ "hashlink",
+]
 
 [[package]]
 name = "yoke"
