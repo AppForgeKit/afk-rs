@@ -1,16 +1,22 @@
-use crate::types::Level;
 use tracing_appender::{non_blocking, non_blocking::WorkerGuard};
-use tracing_subscriber::{EnvFilter, fmt};
+use tracing_subscriber::{EnvFilter, fmt, prelude::*};
 
 pub fn init() -> WorkerGuard {
     let (writer, guard) = non_blocking(std::io::stdout());
 
-    fmt()
-        .with_writer(writer)
-        .with_max_level(Level::DEBUG)
-        .with_env_filter(EnvFilter::from_default_env())
-        .json()
-        .init();
+    let subscriber = tracing_subscriber::registry().with(
+        fmt::layer()
+            .with_writer(writer)
+            .json()
+            .log_internal_errors(true)
+            .with_filter(EnvFilter::from_default_env()),
+    );
+
+    #[cfg(feature = "sentry")]
+    // Подключает интеграцию tracing с Sentry.
+    let subscriber = subscriber.with(sentry_tracing::layer());
+
+    subscriber.init();
 
     guard
 }

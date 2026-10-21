@@ -19,6 +19,15 @@ types = [
     "tracing/log"
 ]
 
+sentry = [
+    "default",
+    "dep:sentry-tracing",
+]
+
+[dependencies.sentry-tracing]
+workspace = true
+optional = true
+
 [dependencies.tracing]
 workspace = true
 features = [
